@@ -8,3 +8,5 @@ C:\Users\Akhil Kumar\source\repos\Bookstore-Management-System\obj\Debug\Bookstor
 C:\Users\Akhil Kumar\source\repos\Bookstore-Management-System\obj\Debug\Bookstore-Management-System.csproj.CoreCompileInputs.cache
 C:\Users\Akhil Kumar\source\repos\Bookstore-Management-System\obj\Debug\Bookstore-Management-System.exe
 C:\Users\Akhil Kumar\source\repos\Bookstore-Management-System\obj\Debug\Bookstore-Management-System.pdb
+C:\Users\Akhil Kumar\source\repos\Bookstore-Management-System\bin\Debug\Database.mdf
+C:\Users\Akhil Kumar\source\repos\Bookstore-Management-System\bin\Debug\Database_log.ldf
