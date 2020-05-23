@@ -91,5 +91,33 @@ namespace Bookstore_Management_System
         {
             refreshDataView();
         }
+
+        private void del_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("BooksDelete_SP", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@accNo", accno_textbox.Text);
+                con.Open();
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("SQL ERROR \n" + ex);
+                }
+                con.Close();
+
+                refreshDataView();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("SQL ERROR \n"+ex);
+            }
+        }
     }
 }
