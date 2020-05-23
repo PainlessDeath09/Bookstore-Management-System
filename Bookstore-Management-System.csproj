@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppBody.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppBody.Designer.cs">
+      <DependentUpon>AppBody.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

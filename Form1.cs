@@ -22,30 +22,50 @@ namespace Bookstore_Management_System
         SqlCommand cmd;
         SqlDataReader dr;
 
-        private void getData()
+        private String getUserName()
         {
             con.Open();
             String syntax = "SELECT Value from systemTable where Property = 'UserName'";
             cmd = new SqlCommand(syntax, con);
             dr = cmd.ExecuteReader();
             dr.Read();
-            MessageBox.Show(""+dr[0].ToString());
+            String temp = dr[0].ToString();
+            con.Close();
+            return temp;
 
         }
-        
+
+        private String getPassword()
+        {
+            con.Open();
+            String syntax = "SELECT Value from systemTable where Property = 'Password'";
+            cmd = new SqlCommand(syntax, con);
+            dr = cmd.ExecuteReader();
+            dr.Read();
+            String temp = dr[0].ToString();
+            con.Close();
+            return temp;
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            getData();
-            String user = textBox1.Text;
-            String pass = textBox2.Text;
 
-            if(user.Equals("admin") && pass.Equals("123"))
+            String user = getUserName();
+            String pass = getPassword();
+
+            if(user.Equals(textBox1.Text) && pass.Equals(textBox2.Text))
             {
                 MessageBox.Show("Login Succcess");
+                AppBody ob = new AppBody();
+                this.Hide();
+                ob.Show();
             }
             else
             {
                 MessageBox.Show("Login Unsuccessful");
+                textBox1.Clear();
+                textBox2.Clear();
             }
         }
     }
