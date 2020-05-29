@@ -190,12 +190,15 @@ namespace Bookstore_Management_System
 
         private void bookACC_Search_Click(object sender, EventArgs e)
         {
+            bookResult.Text = "";
             con.Open();
             String syntax = "SELECT m_ID from members where Book1 = '" + BookID.Text + "'";
             SqlCommand cmd = new SqlCommand(syntax, con);
             SqlDataReader dr = cmd.ExecuteReader();
             dr.Read();
-            bookResult.Text = "Book1= " + dr[0].ToString();
+            if(dr.HasRows)
+                bookResult.Text = BookID.Text+" has been bought by = \n" + dr[0].ToString();
+  
             //bookResult.Visible = true;
             con.Close();
 
@@ -204,9 +207,22 @@ namespace Bookstore_Management_System
             cmd = new SqlCommand(syntax, con);
             dr = cmd.ExecuteReader();
             dr.Read();
-            bookResult.Text = bookResult.Text+"\nBook2= " + dr[0].ToString();
+            if(dr.HasRows)
+                if(bookResult.Text == "")
+                    bookResult.Text = BookID.Text + " has been bought by = \n" + dr[0].ToString();
+                else
+                    bookResult.Text = bookResult.Text+"\n" + dr[0].ToString();
             bookResult.Visible = true;
             con.Close();
+        }
+
+        private void ClearAll_Click(object sender, EventArgs e)
+        {
+            memResult.Visible = false;
+            memResult2.Visible = false;
+            bookResult.Visible = false;
+            memId.Clear();
+            BookID.Clear();
         }
     }
 }

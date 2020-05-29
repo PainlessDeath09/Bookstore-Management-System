@@ -52,26 +52,26 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.buyPage = new System.Windows.Forms.TabPage();
-            this.transPage = new System.Windows.Forms.TabPage();
-            this.settingsPage = new System.Windows.Forms.TabPage();
-            this.mem_Search = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.memId = new System.Windows.Forms.TextBox();
-            this.bookACC_Search = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.BookID = new System.Windows.Forms.TextBox();
-            this.ClearAll = new System.Windows.Forms.Button();
-            this.memResult = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.makePurchase = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.bookResult = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.transPage = new System.Windows.Forms.TabPage();
             this.memResult2 = new System.Windows.Forms.Label();
+            this.bookResult = new System.Windows.Forms.Label();
+            this.memResult = new System.Windows.Forms.Label();
+            this.ClearAll = new System.Windows.Forms.Button();
+            this.bookACC_Search = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.BookID = new System.Windows.Forms.TextBox();
+            this.mem_Search = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.memId = new System.Windows.Forms.TextBox();
+            this.settingsPage = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.bookPage.SuspendLayout();
             this.bookDetails.SuspendLayout();
@@ -329,122 +329,32 @@
             this.buyPage.Text = "Buy";
             this.buyPage.UseVisualStyleBackColor = true;
             // 
-            // transPage
+            // label14
             // 
-            this.transPage.Controls.Add(this.memResult2);
-            this.transPage.Controls.Add(this.bookResult);
-            this.transPage.Controls.Add(this.memResult);
-            this.transPage.Controls.Add(this.ClearAll);
-            this.transPage.Controls.Add(this.bookACC_Search);
-            this.transPage.Controls.Add(this.label9);
-            this.transPage.Controls.Add(this.BookID);
-            this.transPage.Controls.Add(this.mem_Search);
-            this.transPage.Controls.Add(this.label8);
-            this.transPage.Controls.Add(this.memId);
-            this.transPage.Location = new System.Drawing.Point(4, 25);
-            this.transPage.Name = "transPage";
-            this.transPage.Size = new System.Drawing.Size(1344, 736);
-            this.transPage.TabIndex = 2;
-            this.transPage.Text = "Transactions";
-            this.transPage.UseVisualStyleBackColor = true;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(388, 129);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(66, 20);
+            this.label14.TabIndex = 27;
+            this.label14.Text = "Book 2:";
             // 
-            // settingsPage
+            // label13
             // 
-            this.settingsPage.Location = new System.Drawing.Point(4, 25);
-            this.settingsPage.Name = "settingsPage";
-            this.settingsPage.Size = new System.Drawing.Size(1344, 736);
-            this.settingsPage.TabIndex = 3;
-            this.settingsPage.Text = "Settings";
-            this.settingsPage.UseVisualStyleBackColor = true;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(388, 85);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(66, 20);
+            this.label13.TabIndex = 26;
+            this.label13.Text = "Book 1:";
             // 
-            // mem_Search
+            // textBox4
             // 
-            this.mem_Search.Location = new System.Drawing.Point(577, 86);
-            this.mem_Search.Name = "mem_Search";
-            this.mem_Search.Size = new System.Drawing.Size(110, 50);
-            this.mem_Search.TabIndex = 15;
-            this.mem_Search.Text = "Search";
-            this.mem_Search.UseVisualStyleBackColor = true;
-            this.mem_Search.Click += new System.EventHandler(this.mem_Search_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(573, 20);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(114, 25);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Member ID:";
-            // 
-            // memId
-            // 
-            this.memId.Location = new System.Drawing.Point(472, 48);
-            this.memId.Name = "memId";
-            this.memId.Size = new System.Drawing.Size(331, 22);
-            this.memId.TabIndex = 8;
-            // 
-            // bookACC_Search
-            // 
-            this.bookACC_Search.Location = new System.Drawing.Point(579, 396);
-            this.bookACC_Search.Name = "bookACC_Search";
-            this.bookACC_Search.Size = new System.Drawing.Size(110, 50);
-            this.bookACC_Search.TabIndex = 18;
-            this.bookACC_Search.Text = "Search";
-            this.bookACC_Search.UseVisualStyleBackColor = true;
-            this.bookACC_Search.Click += new System.EventHandler(this.bookACC_Search_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(574, 330);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(139, 25);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Book ACC no:";
-            // 
-            // BookID
-            // 
-            this.BookID.Location = new System.Drawing.Point(474, 358);
-            this.BookID.Name = "BookID";
-            this.BookID.Size = new System.Drawing.Size(331, 22);
-            this.BookID.TabIndex = 16;
-            // 
-            // ClearAll
-            // 
-            this.ClearAll.Location = new System.Drawing.Point(579, 629);
-            this.ClearAll.Name = "ClearAll";
-            this.ClearAll.Size = new System.Drawing.Size(109, 38);
-            this.ClearAll.TabIndex = 19;
-            this.ClearAll.Text = "Clear All";
-            this.ClearAll.UseVisualStyleBackColor = true;
-            // 
-            // memResult
-            // 
-            this.memResult.AutoSize = true;
-            this.memResult.Location = new System.Drawing.Point(470, 170);
-            this.memResult.Name = "memResult";
-            this.memResult.Size = new System.Drawing.Size(54, 17);
-            this.memResult.TabIndex = 20;
-            this.memResult.Text = "label10";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(560, 45);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(139, 25);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "Book ACC no:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(460, 85);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(331, 22);
-            this.textBox2.TabIndex = 19;
+            this.textBox4.Location = new System.Drawing.Point(460, 129);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(331, 22);
+            this.textBox4.TabIndex = 25;
             // 
             // makePurchase
             // 
@@ -473,32 +383,50 @@
             this.textBox3.Size = new System.Drawing.Size(331, 22);
             this.textBox3.TabIndex = 22;
             // 
-            // textBox4
+            // label11
             // 
-            this.textBox4.Location = new System.Drawing.Point(460, 129);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(331, 22);
-            this.textBox4.TabIndex = 25;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(560, 45);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(139, 25);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "Book ACC no:";
             // 
-            // label13
+            // textBox2
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(388, 85);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(66, 20);
-            this.label13.TabIndex = 26;
-            this.label13.Text = "Book 1:";
+            this.textBox2.Location = new System.Drawing.Point(460, 85);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(331, 22);
+            this.textBox2.TabIndex = 19;
             // 
-            // label14
+            // transPage
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(388, 129);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(66, 20);
-            this.label14.TabIndex = 27;
-            this.label14.Text = "Book 2:";
+            this.transPage.Controls.Add(this.memResult2);
+            this.transPage.Controls.Add(this.bookResult);
+            this.transPage.Controls.Add(this.memResult);
+            this.transPage.Controls.Add(this.ClearAll);
+            this.transPage.Controls.Add(this.bookACC_Search);
+            this.transPage.Controls.Add(this.label9);
+            this.transPage.Controls.Add(this.BookID);
+            this.transPage.Controls.Add(this.mem_Search);
+            this.transPage.Controls.Add(this.label8);
+            this.transPage.Controls.Add(this.memId);
+            this.transPage.Location = new System.Drawing.Point(4, 25);
+            this.transPage.Name = "transPage";
+            this.transPage.Size = new System.Drawing.Size(1344, 736);
+            this.transPage.TabIndex = 2;
+            this.transPage.Text = "Transactions";
+            this.transPage.UseVisualStyleBackColor = true;
+            // 
+            // memResult2
+            // 
+            this.memResult2.AutoSize = true;
+            this.memResult2.Location = new System.Drawing.Point(469, 200);
+            this.memResult2.Name = "memResult2";
+            this.memResult2.Size = new System.Drawing.Size(54, 17);
+            this.memResult2.TabIndex = 22;
+            this.memResult2.Text = "label10";
             // 
             // bookResult
             // 
@@ -509,14 +437,87 @@
             this.bookResult.TabIndex = 21;
             this.bookResult.Text = "label10";
             // 
-            // memResult2
+            // memResult
             // 
-            this.memResult2.AutoSize = true;
-            this.memResult2.Location = new System.Drawing.Point(469, 200);
-            this.memResult2.Name = "memResult2";
-            this.memResult2.Size = new System.Drawing.Size(54, 17);
-            this.memResult2.TabIndex = 22;
-            this.memResult2.Text = "label10";
+            this.memResult.AutoSize = true;
+            this.memResult.Location = new System.Drawing.Point(470, 170);
+            this.memResult.Name = "memResult";
+            this.memResult.Size = new System.Drawing.Size(54, 17);
+            this.memResult.TabIndex = 20;
+            this.memResult.Text = "label10";
+            // 
+            // ClearAll
+            // 
+            this.ClearAll.Location = new System.Drawing.Point(579, 629);
+            this.ClearAll.Name = "ClearAll";
+            this.ClearAll.Size = new System.Drawing.Size(109, 38);
+            this.ClearAll.TabIndex = 19;
+            this.ClearAll.Text = "Clear All";
+            this.ClearAll.UseVisualStyleBackColor = true;
+            this.ClearAll.Click += new System.EventHandler(this.ClearAll_Click);
+            // 
+            // bookACC_Search
+            // 
+            this.bookACC_Search.Location = new System.Drawing.Point(579, 396);
+            this.bookACC_Search.Name = "bookACC_Search";
+            this.bookACC_Search.Size = new System.Drawing.Size(110, 50);
+            this.bookACC_Search.TabIndex = 18;
+            this.bookACC_Search.Text = "Search";
+            this.bookACC_Search.UseVisualStyleBackColor = true;
+            this.bookACC_Search.Click += new System.EventHandler(this.bookACC_Search_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(574, 330);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(139, 25);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Book ACC no:";
+            // 
+            // BookID
+            // 
+            this.BookID.Location = new System.Drawing.Point(474, 358);
+            this.BookID.Name = "BookID";
+            this.BookID.Size = new System.Drawing.Size(331, 22);
+            this.BookID.TabIndex = 16;
+            // 
+            // mem_Search
+            // 
+            this.mem_Search.Location = new System.Drawing.Point(577, 86);
+            this.mem_Search.Name = "mem_Search";
+            this.mem_Search.Size = new System.Drawing.Size(110, 50);
+            this.mem_Search.TabIndex = 15;
+            this.mem_Search.Text = "Search";
+            this.mem_Search.UseVisualStyleBackColor = true;
+            this.mem_Search.Click += new System.EventHandler(this.mem_Search_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(573, 20);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(114, 25);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "Member ID:";
+            // 
+            // memId
+            // 
+            this.memId.Location = new System.Drawing.Point(472, 48);
+            this.memId.Name = "memId";
+            this.memId.Size = new System.Drawing.Size(331, 22);
+            this.memId.TabIndex = 8;
+            // 
+            // settingsPage
+            // 
+            this.settingsPage.Location = new System.Drawing.Point(4, 25);
+            this.settingsPage.Name = "settingsPage";
+            this.settingsPage.Size = new System.Drawing.Size(1344, 736);
+            this.settingsPage.TabIndex = 3;
+            this.settingsPage.Text = "Settings";
+            this.settingsPage.UseVisualStyleBackColor = true;
             // 
             // AppBody
             // 
