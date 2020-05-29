@@ -84,12 +84,42 @@ namespace Bookstore_Management_System
 
         private void search_Click(object sender, EventArgs e)
         {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SearchBook_SP", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@accNo", textBox1.Text);
 
+                SqlDataAdapter DA = new SqlDataAdapter(cmd);
+                DataSet DS = new DataSet();
+                DA.Fill(DS);
+
+                con.Open();
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("SQL ERROR \n" + ex);
+                }
+                con.Close();
+
+                dataGridView1.DataSource = DS.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("SQL ERROR \n" + ex);
+            }
         }
+
 
         private void AppBody_Load(object sender, EventArgs e)
         {
             refreshDataView();
+            memResult.Visible = false;
+            memResult2.Visible = false;
+            bookResult.Visible = false;
         }
 
         private void del_Click(object sender, EventArgs e)
@@ -118,6 +148,65 @@ namespace Bookstore_Management_System
             {
                 MessageBox.Show("SQL ERROR \n"+ex);
             }
+        }
+
+        private void clr_Click(object sender, EventArgs e)
+        {
+            refreshDataView();
+            textBox1.Clear();
+            name_textbox.Clear();
+            accno_textbox.Clear();
+            pub_textbox.Clear();
+            did.Clear();
+            author_textbox.Clear();
+            isbn_textbox.Clear();
+        }
+
+        private void makePurchase_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mem_Search_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            String syntax = "SELECT Book1 from members where m_ID = '"+memId.Text+"'";
+            SqlCommand cmd = new SqlCommand(syntax, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+            memResult.Text="Book1= "+dr[0].ToString();
+            memResult.Visible = true;
+            con.Close();
+
+            con.Open();
+            syntax = "SELECT Book2 from members where m_ID = '" + memId.Text + "'";
+            cmd = new SqlCommand(syntax, con);
+            dr = cmd.ExecuteReader();
+            dr.Read();
+            memResult2.Text = "Book2= " + dr[0].ToString();
+            memResult2.Visible = true;
+            con.Close();
+        }
+
+        private void bookACC_Search_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            String syntax = "SELECT m_ID from members where Book1 = '" + BookID.Text + "'";
+            SqlCommand cmd = new SqlCommand(syntax, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+            bookResult.Text = "Book1= " + dr[0].ToString();
+            //bookResult.Visible = true;
+            con.Close();
+
+            con.Open();
+            syntax = "SELECT m_ID from members where Book2 = '" + BookID.Text + "'";
+            cmd = new SqlCommand(syntax, con);
+            dr = cmd.ExecuteReader();
+            dr.Read();
+            bookResult.Text = bookResult.Text+"\nBook2= " + dr[0].ToString();
+            bookResult.Visible = true;
+            con.Close();
         }
     }
 }
