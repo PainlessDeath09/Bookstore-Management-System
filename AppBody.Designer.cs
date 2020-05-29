@@ -52,6 +52,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.buyPage = new System.Windows.Forms.TabPage();
+            this.addMem = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.b2 = new System.Windows.Forms.TextBox();
@@ -72,9 +73,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.memId = new System.Windows.Forms.TextBox();
             this.logPage = new System.Windows.Forms.TabPage();
-            this.addMem = new System.Windows.Forms.Button();
-            this.logDataGrid = new System.Windows.Forms.DataGridView();
             this.refreshButton = new System.Windows.Forms.Button();
+            this.logDataGrid = new System.Windows.Forms.DataGridView();
+            this.bookPrice = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.bookPage.SuspendLayout();
             this.bookDetails.SuspendLayout();
@@ -118,6 +120,8 @@
             // 
             // bookDetails
             // 
+            this.bookDetails.Controls.Add(this.bookPrice);
+            this.bookDetails.Controls.Add(this.label10);
             this.bookDetails.Controls.Add(this.did);
             this.bookDetails.Controls.Add(this.label7);
             this.bookDetails.Controls.Add(this.accno_textbox);
@@ -139,7 +143,7 @@
             // 
             // did
             // 
-            this.did.Location = new System.Drawing.Point(568, 129);
+            this.did.Location = new System.Drawing.Point(568, 97);
             this.did.Name = "did";
             this.did.Size = new System.Drawing.Size(234, 22);
             this.did.TabIndex = 11;
@@ -148,7 +152,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(499, 129);
+            this.label7.Location = new System.Drawing.Point(499, 97);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 20);
             this.label7.TabIndex = 10;
@@ -173,7 +177,7 @@
             // 
             // author_textbox
             // 
-            this.author_textbox.Location = new System.Drawing.Point(914, 154);
+            this.author_textbox.Location = new System.Drawing.Point(997, 154);
             this.author_textbox.Name = "author_textbox";
             this.author_textbox.Size = new System.Drawing.Size(234, 22);
             this.author_textbox.TabIndex = 7;
@@ -182,7 +186,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(845, 154);
+            this.label5.Location = new System.Drawing.Point(928, 154);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 20);
             this.label5.TabIndex = 6;
@@ -190,7 +194,7 @@
             // 
             // isbn_textbox
             // 
-            this.isbn_textbox.Location = new System.Drawing.Point(914, 97);
+            this.isbn_textbox.Location = new System.Drawing.Point(997, 97);
             this.isbn_textbox.Name = "isbn_textbox";
             this.isbn_textbox.Size = new System.Drawing.Size(234, 22);
             this.isbn_textbox.TabIndex = 5;
@@ -199,7 +203,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(855, 97);
+            this.label4.Location = new System.Drawing.Point(938, 97);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 20);
             this.label4.TabIndex = 4;
@@ -207,7 +211,7 @@
             // 
             // pub_textbox
             // 
-            this.pub_textbox.Location = new System.Drawing.Point(248, 154);
+            this.pub_textbox.Location = new System.Drawing.Point(154, 152);
             this.pub_textbox.Name = "pub_textbox";
             this.pub_textbox.Size = new System.Drawing.Size(234, 22);
             this.pub_textbox.TabIndex = 3;
@@ -216,7 +220,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(158, 154);
+            this.label3.Location = new System.Drawing.Point(64, 152);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 20);
             this.label3.TabIndex = 2;
@@ -224,7 +228,7 @@
             // 
             // name_textbox
             // 
-            this.name_textbox.Location = new System.Drawing.Point(248, 97);
+            this.name_textbox.Location = new System.Drawing.Point(154, 95);
             this.name_textbox.Name = "name_textbox";
             this.name_textbox.Size = new System.Drawing.Size(234, 22);
             this.name_textbox.TabIndex = 1;
@@ -233,7 +237,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(184, 97);
+            this.label2.Location = new System.Drawing.Point(90, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(58, 20);
             this.label2.TabIndex = 0;
@@ -335,11 +339,20 @@
             this.buyPage.Text = "Buy";
             this.buyPage.UseVisualStyleBackColor = true;
             // 
+            // addMem
+            // 
+            this.addMem.Location = new System.Drawing.Point(555, 200);
+            this.addMem.Name = "addMem";
+            this.addMem.Size = new System.Drawing.Size(120, 45);
+            this.addMem.TabIndex = 28;
+            this.addMem.Text = "Add New Member";
+            this.addMem.UseVisualStyleBackColor = true;
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(388, 129);
+            this.label14.Location = new System.Drawing.Point(370, 129);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(66, 20);
             this.label14.TabIndex = 27;
@@ -349,7 +362,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(388, 85);
+            this.label13.Location = new System.Drawing.Point(370, 85);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(66, 20);
             this.label13.TabIndex = 26;
@@ -527,14 +540,15 @@
             this.logPage.Text = "Log";
             this.logPage.UseVisualStyleBackColor = true;
             // 
-            // addMem
+            // refreshButton
             // 
-            this.addMem.Location = new System.Drawing.Point(555, 200);
-            this.addMem.Name = "addMem";
-            this.addMem.Size = new System.Drawing.Size(120, 45);
-            this.addMem.TabIndex = 28;
-            this.addMem.Text = "Add New Member";
-            this.addMem.UseVisualStyleBackColor = true;
+            this.refreshButton.Location = new System.Drawing.Point(32, 24);
+            this.refreshButton.Name = "refreshButton";
+            this.refreshButton.Size = new System.Drawing.Size(75, 23);
+            this.refreshButton.TabIndex = 33;
+            this.refreshButton.Text = "Refresh";
+            this.refreshButton.UseVisualStyleBackColor = true;
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
             // logDataGrid
             // 
@@ -546,15 +560,22 @@
             this.logDataGrid.Size = new System.Drawing.Size(1283, 622);
             this.logDataGrid.TabIndex = 32;
             // 
-            // refreshButton
+            // bookPrice
             // 
-            this.refreshButton.Location = new System.Drawing.Point(32, 24);
-            this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(75, 23);
-            this.refreshButton.TabIndex = 33;
-            this.refreshButton.Text = "Refresh";
-            this.refreshButton.UseVisualStyleBackColor = true;
-            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
+            this.bookPrice.Location = new System.Drawing.Point(568, 152);
+            this.bookPrice.Name = "bookPrice";
+            this.bookPrice.Size = new System.Drawing.Size(234, 22);
+            this.bookPrice.TabIndex = 13;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(499, 152);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(53, 20);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Price:";
             // 
             // AppBody
             // 
@@ -631,5 +652,7 @@
         private System.Windows.Forms.Button addMem;
         private System.Windows.Forms.DataGridView logDataGrid;
         private System.Windows.Forms.Button refreshButton;
+        private System.Windows.Forms.TextBox bookPrice;
+        private System.Windows.Forms.Label label10;
     }
 }

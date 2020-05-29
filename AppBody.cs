@@ -67,6 +67,7 @@ namespace Bookstore_Management_System
             cmd.Parameters.AddWithValue("@author", author_textbox.Text); 
             cmd.Parameters.AddWithValue("@publisher", pub_textbox.Text);
             cmd.Parameters.AddWithValue("@dId", did.Text);
+            cmd.Parameters.AddWithValue("@price", bookPrice.Text);
             con.Open();
              
             try
