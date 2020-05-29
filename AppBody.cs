@@ -22,7 +22,7 @@ namespace Bookstore_Management_System
 
         private void AppBody_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            Application.Exit();
         }
 
         public void refreshDataView()
@@ -114,6 +114,48 @@ namespace Bookstore_Management_System
             }
         }
 
+        private void refreshStats()
+        {
+            con.Open();
+            String count = "SELECT COUNT(*) FROM books";
+            String averg = "SELECT AVG(price) FROM books";
+            String minimum = "SELECT MIN(price) FROM books";
+            String maximum = "SELECT MAX(price) FROM books";
+
+            SqlCommand cmd = new SqlCommand(count, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            dr.Read();
+            noBooks.Text = dr[0].ToString();
+            noBooks.Visible = true;
+            con.Close();
+
+            con.Open();
+            cmd = new SqlCommand(averg, con);
+            dr = cmd.ExecuteReader();
+            dr.Read();
+            avg.Text = dr[0].ToString();
+            avg.Visible = true;
+            con.Close();
+
+            con.Open();
+            cmd = new SqlCommand(minimum, con);
+            dr = cmd.ExecuteReader();
+            dr.Read();
+            min.Text = dr[0].ToString();
+            min.Visible = true;
+            con.Close();
+
+            con.Open();
+            cmd = new SqlCommand(maximum, con);
+            dr = cmd.ExecuteReader();
+            dr.Read();
+            max.Text = dr[0].ToString();
+            max.Visible = true;
+            con.Close();
+
+
+        }
+
 
         private void AppBody_Load(object sender, EventArgs e)
         {
@@ -121,6 +163,12 @@ namespace Bookstore_Management_System
             memResult.Visible = false;
             memResult2.Visible = false;
             bookResult.Visible = false;
+            noBooks.Visible = false;
+            min.Visible = false;
+            avg.Visible = false;
+            max.Visible = false;
+            refreshStats();
+
         }
 
         private void del_Click(object sender, EventArgs e)
@@ -290,6 +338,11 @@ namespace Bookstore_Management_System
             {
                 MessageBox.Show("SQL ERROR \n" + ex);
             }
+        }
+
+        private void refresh_Click(object sender, EventArgs e)
+        {
+            refreshStats();
         }
     }
 }

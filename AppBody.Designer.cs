@@ -31,6 +31,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.bookPage = new System.Windows.Forms.TabPage();
             this.bookDetails = new System.Windows.Forms.GroupBox();
+            this.bookPrice = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.did = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.accno_textbox = new System.Windows.Forms.TextBox();
@@ -75,8 +77,16 @@
             this.logPage = new System.Windows.Forms.TabPage();
             this.refreshButton = new System.Windows.Forms.Button();
             this.logDataGrid = new System.Windows.Forms.DataGridView();
-            this.bookPrice = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.statPage = new System.Windows.Forms.TabPage();
+            this.label15 = new System.Windows.Forms.Label();
+            this.max = new System.Windows.Forms.Label();
+            this.refresh = new System.Windows.Forms.Button();
+            this.min = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.avg = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.noBooks = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.bookPage.SuspendLayout();
             this.bookDetails.SuspendLayout();
@@ -85,6 +95,7 @@
             this.transPage.SuspendLayout();
             this.logPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logDataGrid)).BeginInit();
+            this.statPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -93,6 +104,7 @@
             this.tabControl1.Controls.Add(this.buyPage);
             this.tabControl1.Controls.Add(this.transPage);
             this.tabControl1.Controls.Add(this.logPage);
+            this.tabControl1.Controls.Add(this.statPage);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -140,6 +152,23 @@
             this.bookDetails.TabIndex = 8;
             this.bookDetails.TabStop = false;
             this.bookDetails.Text = "Book Details";
+            // 
+            // bookPrice
+            // 
+            this.bookPrice.Location = new System.Drawing.Point(568, 152);
+            this.bookPrice.Name = "bookPrice";
+            this.bookPrice.Size = new System.Drawing.Size(234, 22);
+            this.bookPrice.TabIndex = 13;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(499, 152);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(53, 20);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Price:";
             // 
             // did
             // 
@@ -560,22 +589,114 @@
             this.logDataGrid.Size = new System.Drawing.Size(1283, 622);
             this.logDataGrid.TabIndex = 32;
             // 
-            // bookPrice
+            // statPage
             // 
-            this.bookPrice.Location = new System.Drawing.Point(568, 152);
-            this.bookPrice.Name = "bookPrice";
-            this.bookPrice.Size = new System.Drawing.Size(234, 22);
-            this.bookPrice.TabIndex = 13;
+            this.statPage.Controls.Add(this.noBooks);
+            this.statPage.Controls.Add(this.label22);
+            this.statPage.Controls.Add(this.avg);
+            this.statPage.Controls.Add(this.label20);
+            this.statPage.Controls.Add(this.min);
+            this.statPage.Controls.Add(this.label18);
+            this.statPage.Controls.Add(this.refresh);
+            this.statPage.Controls.Add(this.max);
+            this.statPage.Controls.Add(this.label15);
+            this.statPage.Location = new System.Drawing.Point(4, 25);
+            this.statPage.Name = "statPage";
+            this.statPage.Padding = new System.Windows.Forms.Padding(3);
+            this.statPage.Size = new System.Drawing.Size(1344, 736);
+            this.statPage.TabIndex = 4;
+            this.statPage.Text = "Stats";
+            this.statPage.UseVisualStyleBackColor = true;
             // 
-            // label10
+            // label15
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(499, 152);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 20);
-            this.label10.TabIndex = 12;
-            this.label10.Text = "Price:";
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(273, 203);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(186, 24);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Highest Priced Book:";
+            // 
+            // max
+            // 
+            this.max.AutoSize = true;
+            this.max.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.max.Location = new System.Drawing.Point(520, 203);
+            this.max.Name = "max";
+            this.max.Size = new System.Drawing.Size(70, 24);
+            this.max.TabIndex = 1;
+            this.max.Text = "label16";
+            // 
+            // refresh
+            // 
+            this.refresh.Location = new System.Drawing.Point(1159, 39);
+            this.refresh.Name = "refresh";
+            this.refresh.Size = new System.Drawing.Size(75, 23);
+            this.refresh.TabIndex = 2;
+            this.refresh.Text = "Refresh";
+            this.refresh.UseVisualStyleBackColor = true;
+            this.refresh.Click += new System.EventHandler(this.refresh_Click);
+            // 
+            // min
+            // 
+            this.min.AutoSize = true;
+            this.min.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.min.Location = new System.Drawing.Point(520, 245);
+            this.min.Name = "min";
+            this.min.Size = new System.Drawing.Size(70, 24);
+            this.min.TabIndex = 4;
+            this.min.Text = "label17";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(273, 245);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(181, 24);
+            this.label18.TabIndex = 3;
+            this.label18.Text = "Lowest Priced Book:";
+            // 
+            // avg
+            // 
+            this.avg.AutoSize = true;
+            this.avg.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.avg.Location = new System.Drawing.Point(520, 286);
+            this.avg.Name = "avg";
+            this.avg.Size = new System.Drawing.Size(70, 24);
+            this.avg.TabIndex = 6;
+            this.avg.Text = "label19";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(273, 286);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(202, 24);
+            this.label20.TabIndex = 5;
+            this.label20.Text = "Average Price of Book:";
+            // 
+            // noBooks
+            // 
+            this.noBooks.AutoSize = true;
+            this.noBooks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noBooks.Location = new System.Drawing.Point(520, 159);
+            this.noBooks.Name = "noBooks";
+            this.noBooks.Size = new System.Drawing.Size(70, 24);
+            this.noBooks.TabIndex = 8;
+            this.noBooks.Text = "label21";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(273, 159);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(161, 24);
+            this.label22.TabIndex = 7;
+            this.label22.Text = "Number of Books:";
             // 
             // AppBody
             // 
@@ -599,6 +720,8 @@
             this.transPage.PerformLayout();
             this.logPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logDataGrid)).EndInit();
+            this.statPage.ResumeLayout(false);
+            this.statPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -654,5 +777,15 @@
         private System.Windows.Forms.Button refreshButton;
         private System.Windows.Forms.TextBox bookPrice;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TabPage statPage;
+        private System.Windows.Forms.Label avg;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label min;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button refresh;
+        private System.Windows.Forms.Label max;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label noBooks;
+        private System.Windows.Forms.Label label22;
     }
 }
