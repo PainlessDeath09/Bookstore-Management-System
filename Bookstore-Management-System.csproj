@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addNewMem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addNewMem.Designer.cs">
+      <DependentUpon>addNewMem.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppBody.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="addNewMem.resx">
+      <DependentUpon>addNewMem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppBody.resx">
       <DependentUpon>AppBody.cs</DependentUpon>
     </EmbeddedResource>

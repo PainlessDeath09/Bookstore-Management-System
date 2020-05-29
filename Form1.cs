@@ -13,6 +13,7 @@ namespace Bookstore_Management_System
 {
     public partial class Form1 : Form
     {
+        public static String username;
         public Form1()
         {
             InitializeComponent();
@@ -60,6 +61,8 @@ namespace Bookstore_Management_System
                 AppBody ob = new AppBody();
                 this.Hide();
                 ob.Show();
+                username = user;
+                
             }
             else
             {

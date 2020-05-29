@@ -164,6 +164,43 @@ namespace Bookstore_Management_System
 
         private void makePurchase_Click(object sender, EventArgs e)
         {
+            SqlCommand cmd = new SqlCommand("MakePurchase_SP", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@memID", mID.Text);
+            cmd.Parameters.AddWithValue("@Book1", b1.Text);
+            cmd.Parameters.AddWithValue("@Book2", b2.Text);
+            con.Open();
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("SQL ERROR \n" + ex);
+            }
+            con.Close();
+
+            //INSERTION LOG
+            cmd = new SqlCommand("TransactionsInsert_SP", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@mem_ID", mID.Text);
+            cmd.Parameters.AddWithValue("@bookno", b1.Text);
+            cmd.Parameters.AddWithValue("@bookno2", b2.Text);
+            cmd.Parameters.AddWithValue("@Authorized_By", Form1.username);
+            con.Open();
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("SQL ERROR \n" + ex);
+            }
+            con.Close();
+
+
 
         }
 
@@ -223,6 +260,35 @@ namespace Bookstore_Management_System
             bookResult.Visible = false;
             memId.Clear();
             BookID.Clear();
+        }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("ShowAllLog", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlDataAdapter DA = new SqlDataAdapter(cmd);
+                DataSet DS = new DataSet();
+                DA.Fill(DS);
+                con.Open();
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("SQL ERROR \n" + ex);
+                }
+                con.Close();
+
+                logDataGrid.DataSource = DS.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("SQL ERROR \n" + ex);
+            }
         }
     }
 }

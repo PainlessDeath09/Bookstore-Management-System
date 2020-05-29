@@ -54,12 +54,12 @@
             this.buyPage = new System.Windows.Forms.TabPage();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.b2 = new System.Windows.Forms.TextBox();
             this.makePurchase = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.mID = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.b1 = new System.Windows.Forms.TextBox();
             this.transPage = new System.Windows.Forms.TabPage();
             this.memResult2 = new System.Windows.Forms.Label();
             this.bookResult = new System.Windows.Forms.Label();
@@ -71,13 +71,18 @@
             this.mem_Search = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.memId = new System.Windows.Forms.TextBox();
-            this.settingsPage = new System.Windows.Forms.TabPage();
+            this.logPage = new System.Windows.Forms.TabPage();
+            this.addMem = new System.Windows.Forms.Button();
+            this.logDataGrid = new System.Windows.Forms.DataGridView();
+            this.refreshButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.bookPage.SuspendLayout();
             this.bookDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.buyPage.SuspendLayout();
             this.transPage.SuspendLayout();
+            this.logPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -85,7 +90,7 @@
             this.tabControl1.Controls.Add(this.bookPage);
             this.tabControl1.Controls.Add(this.buyPage);
             this.tabControl1.Controls.Add(this.transPage);
-            this.tabControl1.Controls.Add(this.settingsPage);
+            this.tabControl1.Controls.Add(this.logPage);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -313,14 +318,15 @@
             // 
             // buyPage
             // 
+            this.buyPage.Controls.Add(this.addMem);
             this.buyPage.Controls.Add(this.label14);
             this.buyPage.Controls.Add(this.label13);
-            this.buyPage.Controls.Add(this.textBox4);
+            this.buyPage.Controls.Add(this.b2);
             this.buyPage.Controls.Add(this.makePurchase);
             this.buyPage.Controls.Add(this.label12);
-            this.buyPage.Controls.Add(this.textBox3);
+            this.buyPage.Controls.Add(this.mID);
             this.buyPage.Controls.Add(this.label11);
-            this.buyPage.Controls.Add(this.textBox2);
+            this.buyPage.Controls.Add(this.b1);
             this.buyPage.Location = new System.Drawing.Point(4, 25);
             this.buyPage.Name = "buyPage";
             this.buyPage.Padding = new System.Windows.Forms.Padding(3);
@@ -349,16 +355,16 @@
             this.label13.TabIndex = 26;
             this.label13.Text = "Book 1:";
             // 
-            // textBox4
+            // b2
             // 
-            this.textBox4.Location = new System.Drawing.Point(460, 129);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(331, 22);
-            this.textBox4.TabIndex = 25;
+            this.b2.Location = new System.Drawing.Point(460, 129);
+            this.b2.Name = "b2";
+            this.b2.Size = new System.Drawing.Size(331, 22);
+            this.b2.TabIndex = 25;
             // 
             // makePurchase
             // 
-            this.makePurchase.Location = new System.Drawing.Point(565, 400);
+            this.makePurchase.Location = new System.Drawing.Point(565, 355);
             this.makePurchase.Name = "makePurchase";
             this.makePurchase.Size = new System.Drawing.Size(110, 50);
             this.makePurchase.TabIndex = 24;
@@ -370,18 +376,18 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(560, 288);
+            this.label12.Location = new System.Drawing.Point(560, 279);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(114, 25);
             this.label12.TabIndex = 23;
             this.label12.Text = "Member ID:";
             // 
-            // textBox3
+            // mID
             // 
-            this.textBox3.Location = new System.Drawing.Point(459, 316);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(331, 22);
-            this.textBox3.TabIndex = 22;
+            this.mID.Location = new System.Drawing.Point(459, 307);
+            this.mID.Name = "mID";
+            this.mID.Size = new System.Drawing.Size(331, 22);
+            this.mID.TabIndex = 22;
             // 
             // label11
             // 
@@ -393,12 +399,12 @@
             this.label11.TabIndex = 20;
             this.label11.Text = "Book ACC no:";
             // 
-            // textBox2
+            // b1
             // 
-            this.textBox2.Location = new System.Drawing.Point(460, 85);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(331, 22);
-            this.textBox2.TabIndex = 19;
+            this.b1.Location = new System.Drawing.Point(460, 85);
+            this.b1.Name = "b1";
+            this.b1.Size = new System.Drawing.Size(331, 22);
+            this.b1.TabIndex = 19;
             // 
             // transPage
             // 
@@ -510,14 +516,45 @@
             this.memId.Size = new System.Drawing.Size(331, 22);
             this.memId.TabIndex = 8;
             // 
-            // settingsPage
+            // logPage
             // 
-            this.settingsPage.Location = new System.Drawing.Point(4, 25);
-            this.settingsPage.Name = "settingsPage";
-            this.settingsPage.Size = new System.Drawing.Size(1344, 736);
-            this.settingsPage.TabIndex = 3;
-            this.settingsPage.Text = "Settings";
-            this.settingsPage.UseVisualStyleBackColor = true;
+            this.logPage.Controls.Add(this.refreshButton);
+            this.logPage.Controls.Add(this.logDataGrid);
+            this.logPage.Location = new System.Drawing.Point(4, 25);
+            this.logPage.Name = "logPage";
+            this.logPage.Size = new System.Drawing.Size(1344, 736);
+            this.logPage.TabIndex = 3;
+            this.logPage.Text = "Log";
+            this.logPage.UseVisualStyleBackColor = true;
+            // 
+            // addMem
+            // 
+            this.addMem.Location = new System.Drawing.Point(555, 200);
+            this.addMem.Name = "addMem";
+            this.addMem.Size = new System.Drawing.Size(120, 45);
+            this.addMem.TabIndex = 28;
+            this.addMem.Text = "Add New Member";
+            this.addMem.UseVisualStyleBackColor = true;
+            // 
+            // logDataGrid
+            // 
+            this.logDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.logDataGrid.Location = new System.Drawing.Point(19, 71);
+            this.logDataGrid.Name = "logDataGrid";
+            this.logDataGrid.RowHeadersWidth = 51;
+            this.logDataGrid.RowTemplate.Height = 24;
+            this.logDataGrid.Size = new System.Drawing.Size(1283, 622);
+            this.logDataGrid.TabIndex = 32;
+            // 
+            // refreshButton
+            // 
+            this.refreshButton.Location = new System.Drawing.Point(32, 24);
+            this.refreshButton.Name = "refreshButton";
+            this.refreshButton.Size = new System.Drawing.Size(75, 23);
+            this.refreshButton.TabIndex = 33;
+            this.refreshButton.Text = "Refresh";
+            this.refreshButton.UseVisualStyleBackColor = true;
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
             // AppBody
             // 
@@ -539,6 +576,8 @@
             this.buyPage.PerformLayout();
             this.transPage.ResumeLayout(false);
             this.transPage.PerformLayout();
+            this.logPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.logDataGrid)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -552,7 +591,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TabPage buyPage;
         private System.Windows.Forms.TabPage transPage;
-        private System.Windows.Forms.TabPage settingsPage;
+        private System.Windows.Forms.TabPage logPage;
         private System.Windows.Forms.Button clr;
         private System.Windows.Forms.Button del;
         private System.Windows.Forms.Button update;
@@ -580,14 +619,17 @@
         private System.Windows.Forms.Button ClearAll;
         private System.Windows.Forms.Button makePurchase;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox mID;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox b1;
         private System.Windows.Forms.Label memResult;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox b2;
         private System.Windows.Forms.Label bookResult;
         private System.Windows.Forms.Label memResult2;
+        private System.Windows.Forms.Button addMem;
+        private System.Windows.Forms.DataGridView logDataGrid;
+        private System.Windows.Forms.Button refreshButton;
     }
 }
