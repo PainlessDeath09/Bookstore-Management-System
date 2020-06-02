@@ -48,7 +48,6 @@
             this.search = new System.Windows.Forms.Button();
             this.clr = new System.Windows.Forms.Button();
             this.del = new System.Windows.Forms.Button();
-            this.update = new System.Windows.Forms.Button();
             this.add = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -78,15 +77,15 @@
             this.refreshButton = new System.Windows.Forms.Button();
             this.logDataGrid = new System.Windows.Forms.DataGridView();
             this.statPage = new System.Windows.Forms.TabPage();
-            this.label15 = new System.Windows.Forms.Label();
-            this.max = new System.Windows.Forms.Label();
-            this.refresh = new System.Windows.Forms.Button();
-            this.min = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.avg = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.noBooks = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.avg = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.min = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.refresh = new System.Windows.Forms.Button();
+            this.max = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.bookPage.SuspendLayout();
             this.bookDetails.SuspendLayout();
@@ -117,7 +116,6 @@
             this.bookPage.Controls.Add(this.search);
             this.bookPage.Controls.Add(this.clr);
             this.bookPage.Controls.Add(this.del);
-            this.bookPage.Controls.Add(this.update);
             this.bookPage.Controls.Add(this.add);
             this.bookPage.Controls.Add(this.dataGridView1);
             this.bookPage.Controls.Add(this.label1);
@@ -284,7 +282,7 @@
             // 
             // clr
             // 
-            this.clr.Location = new System.Drawing.Point(936, 382);
+            this.clr.Location = new System.Drawing.Point(788, 382);
             this.clr.Name = "clr";
             this.clr.Size = new System.Drawing.Size(110, 50);
             this.clr.TabIndex = 6;
@@ -294,7 +292,7 @@
             // 
             // del
             // 
-            this.del.Location = new System.Drawing.Point(714, 382);
+            this.del.Location = new System.Drawing.Point(590, 382);
             this.del.Name = "del";
             this.del.Size = new System.Drawing.Size(110, 50);
             this.del.TabIndex = 5;
@@ -302,18 +300,9 @@
             this.del.UseVisualStyleBackColor = true;
             this.del.Click += new System.EventHandler(this.del_Click);
             // 
-            // update
-            // 
-            this.update.Location = new System.Drawing.Point(492, 382);
-            this.update.Name = "update";
-            this.update.Size = new System.Drawing.Size(110, 50);
-            this.update.TabIndex = 4;
-            this.update.Text = "Update";
-            this.update.UseVisualStyleBackColor = true;
-            // 
             // add
             // 
-            this.add.Location = new System.Drawing.Point(270, 382);
+            this.add.Location = new System.Drawing.Point(363, 382);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(110, 50);
             this.add.TabIndex = 3;
@@ -325,11 +314,11 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(140, 167);
+            this.dataGridView1.Location = new System.Drawing.Point(22, 167);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1053, 162);
+            this.dataGridView1.Size = new System.Drawing.Size(1304, 162);
             this.dataGridView1.TabIndex = 2;
             // 
             // label1
@@ -608,55 +597,25 @@
             this.statPage.Text = "Stats";
             this.statPage.UseVisualStyleBackColor = true;
             // 
-            // label15
+            // noBooks
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(273, 203);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(186, 24);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "Highest Priced Book:";
+            this.noBooks.AutoSize = true;
+            this.noBooks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noBooks.Location = new System.Drawing.Point(520, 159);
+            this.noBooks.Name = "noBooks";
+            this.noBooks.Size = new System.Drawing.Size(70, 24);
+            this.noBooks.TabIndex = 8;
+            this.noBooks.Text = "label21";
             // 
-            // max
+            // label22
             // 
-            this.max.AutoSize = true;
-            this.max.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.max.Location = new System.Drawing.Point(520, 203);
-            this.max.Name = "max";
-            this.max.Size = new System.Drawing.Size(70, 24);
-            this.max.TabIndex = 1;
-            this.max.Text = "label16";
-            // 
-            // refresh
-            // 
-            this.refresh.Location = new System.Drawing.Point(1159, 39);
-            this.refresh.Name = "refresh";
-            this.refresh.Size = new System.Drawing.Size(75, 23);
-            this.refresh.TabIndex = 2;
-            this.refresh.Text = "Refresh";
-            this.refresh.UseVisualStyleBackColor = true;
-            this.refresh.Click += new System.EventHandler(this.refresh_Click);
-            // 
-            // min
-            // 
-            this.min.AutoSize = true;
-            this.min.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.min.Location = new System.Drawing.Point(520, 245);
-            this.min.Name = "min";
-            this.min.Size = new System.Drawing.Size(70, 24);
-            this.min.TabIndex = 4;
-            this.min.Text = "label17";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(273, 245);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(181, 24);
-            this.label18.TabIndex = 3;
-            this.label18.Text = "Lowest Priced Book:";
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(273, 159);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(161, 24);
+            this.label22.TabIndex = 7;
+            this.label22.Text = "Number of Books:";
             // 
             // avg
             // 
@@ -678,25 +637,55 @@
             this.label20.TabIndex = 5;
             this.label20.Text = "Average Price of Book:";
             // 
-            // noBooks
+            // min
             // 
-            this.noBooks.AutoSize = true;
-            this.noBooks.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noBooks.Location = new System.Drawing.Point(520, 159);
-            this.noBooks.Name = "noBooks";
-            this.noBooks.Size = new System.Drawing.Size(70, 24);
-            this.noBooks.TabIndex = 8;
-            this.noBooks.Text = "label21";
+            this.min.AutoSize = true;
+            this.min.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.min.Location = new System.Drawing.Point(520, 245);
+            this.min.Name = "min";
+            this.min.Size = new System.Drawing.Size(70, 24);
+            this.min.TabIndex = 4;
+            this.min.Text = "label17";
             // 
-            // label22
+            // label18
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(273, 159);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(161, 24);
-            this.label22.TabIndex = 7;
-            this.label22.Text = "Number of Books:";
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(273, 245);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(181, 24);
+            this.label18.TabIndex = 3;
+            this.label18.Text = "Lowest Priced Book:";
+            // 
+            // refresh
+            // 
+            this.refresh.Location = new System.Drawing.Point(1159, 39);
+            this.refresh.Name = "refresh";
+            this.refresh.Size = new System.Drawing.Size(75, 23);
+            this.refresh.TabIndex = 2;
+            this.refresh.Text = "Refresh";
+            this.refresh.UseVisualStyleBackColor = true;
+            this.refresh.Click += new System.EventHandler(this.refresh_Click);
+            // 
+            // max
+            // 
+            this.max.AutoSize = true;
+            this.max.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.max.Location = new System.Drawing.Point(520, 203);
+            this.max.Name = "max";
+            this.max.Size = new System.Drawing.Size(70, 24);
+            this.max.TabIndex = 1;
+            this.max.Text = "label16";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(273, 203);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(186, 24);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Highest Priced Book:";
             // 
             // AppBody
             // 
@@ -705,6 +694,7 @@
             this.ClientSize = new System.Drawing.Size(1370, 783);
             this.Controls.Add(this.tabControl1);
             this.Name = "AppBody";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bookstore Management System";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AppBody_FormClosed);
             this.Load += new System.EventHandler(this.AppBody_Load);
@@ -738,7 +728,6 @@
         private System.Windows.Forms.TabPage logPage;
         private System.Windows.Forms.Button clr;
         private System.Windows.Forms.Button del;
-        private System.Windows.Forms.Button update;
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.Button search;
         private System.Windows.Forms.GroupBox bookDetails;

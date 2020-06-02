@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Bookstore_Management_System
 {
@@ -54,7 +48,7 @@ namespace Bookstore_Management_System
             }
         }
 
-        
+
 
         private void add_Click(object sender, EventArgs e)
         {
@@ -64,17 +58,17 @@ namespace Bookstore_Management_System
             cmd.Parameters.AddWithValue("@accNo", accno_textbox.Text);
             cmd.Parameters.AddWithValue("@isbn", isbn_textbox.Text);
             cmd.Parameters.AddWithValue("@name", name_textbox.Text);
-            cmd.Parameters.AddWithValue("@author", author_textbox.Text); 
+            cmd.Parameters.AddWithValue("@author", author_textbox.Text);
             cmd.Parameters.AddWithValue("@publisher", pub_textbox.Text);
             cmd.Parameters.AddWithValue("@dId", did.Text);
             cmd.Parameters.AddWithValue("@price", bookPrice.Text);
             con.Open();
-             
+
             try
             {
                 cmd.ExecuteNonQuery();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("SQL ERROR \n" + ex);
             }
@@ -193,9 +187,9 @@ namespace Bookstore_Management_System
 
                 refreshDataView();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("SQL ERROR \n"+ex);
+                MessageBox.Show("SQL ERROR \n" + ex);
             }
         }
 
@@ -249,6 +243,7 @@ namespace Bookstore_Management_System
             }
             con.Close();
 
+            MessageBox.Show("Purchase Complete");
 
 
         }
@@ -256,11 +251,11 @@ namespace Bookstore_Management_System
         private void mem_Search_Click(object sender, EventArgs e)
         {
             con.Open();
-            String syntax = "SELECT Book1 from members where m_ID = '"+memId.Text+"'";
+            String syntax = "SELECT Book1 from members where m_ID = '" + memId.Text + "'";
             SqlCommand cmd = new SqlCommand(syntax, con);
             SqlDataReader dr = cmd.ExecuteReader();
             dr.Read();
-            memResult.Text="Book1= "+dr[0].ToString();
+            memResult.Text = "Book1= " + dr[0].ToString();
             memResult.Visible = true;
             con.Close();
 
@@ -282,9 +277,9 @@ namespace Bookstore_Management_System
             SqlCommand cmd = new SqlCommand(syntax, con);
             SqlDataReader dr = cmd.ExecuteReader();
             dr.Read();
-            if(dr.HasRows)
-                bookResult.Text = BookID.Text+" has been bought by = \n" + dr[0].ToString();
-  
+            if (dr.HasRows)
+                bookResult.Text = BookID.Text + " has been bought by = \n" + dr[0].ToString();
+
             //bookResult.Visible = true;
             con.Close();
 
@@ -293,11 +288,11 @@ namespace Bookstore_Management_System
             cmd = new SqlCommand(syntax, con);
             dr = cmd.ExecuteReader();
             dr.Read();
-            if(dr.HasRows)
-                if(bookResult.Text == "")
+            if (dr.HasRows)
+                if (bookResult.Text == "")
                     bookResult.Text = BookID.Text + " has been bought by = \n" + dr[0].ToString();
                 else
-                    bookResult.Text = bookResult.Text+"\n" + dr[0].ToString();
+                    bookResult.Text = bookResult.Text + "\n" + dr[0].ToString();
             bookResult.Visible = true;
             con.Close();
         }

@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Bookstore_Management_System
 {
@@ -55,14 +48,14 @@ namespace Bookstore_Management_System
             String user = getUserName();
             String pass = getPassword();
 
-            if(user.Equals(textBox1.Text) && pass.Equals(textBox2.Text))
+            if (user.Equals(textBox1.Text) && pass.Equals(textBox2.Text))
             {
                 MessageBox.Show("Login Succcess");
                 AppBody ob = new AppBody();
                 this.Hide();
                 ob.Show();
                 username = user;
-                
+
             }
             else
             {

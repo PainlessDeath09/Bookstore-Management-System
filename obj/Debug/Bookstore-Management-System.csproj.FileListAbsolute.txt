@@ -1,7 +1,6 @@
 C:\Users\Akhil Kumar\source\repos\Bookstore-Management-System\bin\Debug\Bookstore-Management-System.exe.config
 C:\Users\Akhil Kumar\source\repos\Bookstore-Management-System\bin\Debug\Bookstore-Management-System.exe
 C:\Users\Akhil Kumar\source\repos\Bookstore-Management-System\bin\Debug\Bookstore-Management-System.pdb
-C:\Users\Akhil Kumar\source\repos\Bookstore-Management-System\obj\Debug\Bookstore-Management-System.csprojAssemblyReference.cache
 C:\Users\Akhil Kumar\source\repos\Bookstore-Management-System\obj\Debug\Bookstore_Management_System.Form1.resources
 C:\Users\Akhil Kumar\source\repos\Bookstore-Management-System\obj\Debug\Bookstore_Management_System.Properties.Resources.resources
 C:\Users\Akhil Kumar\source\repos\Bookstore-Management-System\obj\Debug\Bookstore-Management-System.csproj.GenerateResource.cache
@@ -12,3 +11,4 @@ C:\Users\Akhil Kumar\source\repos\Bookstore-Management-System\bin\Debug\Database
 C:\Users\Akhil Kumar\source\repos\Bookstore-Management-System\bin\Debug\Database_log.ldf
 C:\Users\Akhil Kumar\source\repos\Bookstore-Management-System\obj\Debug\Bookstore_Management_System.AppBody.resources
 C:\Users\Akhil Kumar\source\repos\Bookstore-Management-System\obj\Debug\Bookstore_Management_System.addNewMem.resources
+C:\Users\Akhil Kumar\source\repos\Bookstore-Management-System\obj\Debug\Bookstore-Management-System.csprojAssemblyReference.cache
